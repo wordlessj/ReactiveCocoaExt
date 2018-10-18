@@ -25,6 +25,7 @@
 		C314FD0B2178322C00F1623D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD0A2178322C00F1623D /* UITextField.swift */; };
 		C314FD0D2178327300F1623D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD0C2178327300F1623D /* UIViewController.swift */; };
 		C314FD102178341000F1623D /* LimitQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD0F2178341000F1623D /* LimitQueue.swift */; };
+		C314FD162178731D00F1623D /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD152178731D00F1623D /* UIBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		C314FD0A2178322C00F1623D /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		C314FD0C2178327300F1623D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C314FD0F2178341000F1623D /* LimitQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitQueue.swift; sourceTree = "<group>"; };
+		C314FD152178731D00F1623D /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				C314FCFE21782D5C00F1623D /* Notification.swift */,
 				C314FD042178305700F1623D /* Object.swift */,
 				C314FD0021782EE700F1623D /* URLSession.swift */,
+				C314FD152178731D00F1623D /* UIBarButtonItem.swift */,
 				C314FD08217831A700F1623D /* UIControl.swift */,
 				C314FD06217830F200F1623D /* UIKeyboard.swift */,
 				C314FD0A2178322C00F1623D /* UITextField.swift */,
@@ -253,6 +256,7 @@
 				C314FCF821782BB700F1623D /* Property.swift in Sources */,
 				C314FCFA21782C0900F1623D /* Binding.swift in Sources */,
 				C314FCF0217827AE00F1623D /* Signal.swift in Sources */,
+				C314FD162178731D00F1623D /* UIBarButtonItem.swift in Sources */,
 				C314FD09217831A700F1623D /* UIControl.swift in Sources */,
 				C314FCF621782B2500F1623D /* DispatchTimeInterval.swift in Sources */,
 				C314FCFF21782D5C00F1623D /* Notification.swift in Sources */,
