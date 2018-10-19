@@ -37,6 +37,20 @@ extension Reactive where Base: AnyObject {
             action(base)(value)
         }
     }
+
+    public subscript<A, B>(_ action: @escaping (Base) -> (A, B) -> ()) -> BindingTarget<(A, B)> {
+        return makeBindingTarget { base, value in
+            let (a, b) = value
+            action(base)(a, b)
+        }
+    }
+
+    public subscript<A, B, C>(_ action: @escaping (Base) -> (A, B, C) -> ()) -> BindingTarget<(A, B, C)> {
+        return makeBindingTarget { base, value in
+            let (a, b, c) = value
+            action(base)(a, b, c)
+        }
+    }
 }
 
 extension Reactive where Base: NSObject {
