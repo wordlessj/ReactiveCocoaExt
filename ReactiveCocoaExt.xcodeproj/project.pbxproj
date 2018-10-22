@@ -29,6 +29,7 @@
 		C314FD1E217D756500F1623D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD1D217D756500F1623D /* UITableView.swift */; };
 		C314FD20217D7BED00F1623D /* Forwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD1F217D7BED00F1623D /* Forwarder.swift */; };
 		C314FD22217D7DFF00F1623D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD21217D7DFF00F1623D /* UICollectionView.swift */; };
+		C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD23217DAE4900F1623D /* UIPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		C314FD1D217D756500F1623D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		C314FD1F217D7BED00F1623D /* Forwarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forwarder.swift; sourceTree = "<group>"; };
 		C314FD21217D7DFF00F1623D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		C314FD23217DAE4900F1623D /* UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
 		E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				C314FD21217D7DFF00F1623D /* UICollectionView.swift */,
 				C314FD08217831A700F1623D /* UIControl.swift */,
 				C314FD06217830F200F1623D /* UIKeyboard.swift */,
+				C314FD23217DAE4900F1623D /* UIPickerView.swift */,
 				C314FD1D217D756500F1623D /* UITableView.swift */,
 				C314FD0A2178322C00F1623D /* UITextField.swift */,
 				C314FD0C2178327300F1623D /* UIViewController.swift */,
@@ -267,6 +270,7 @@
 				C314FCF0217827AE00F1623D /* Signal.swift in Sources */,
 				C314FD162178731D00F1623D /* UIBarButtonItem.swift in Sources */,
 				C314FD1E217D756500F1623D /* UITableView.swift in Sources */,
+				C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */,
 				C314FD09217831A700F1623D /* UIControl.swift in Sources */,
 				C314FCF621782B2500F1623D /* DispatchTimeInterval.swift in Sources */,
 				C314FCFF21782D5C00F1623D /* Notification.swift in Sources */,

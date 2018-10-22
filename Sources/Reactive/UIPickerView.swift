@@ -1,5 +1,5 @@
 //
-//  UITextField.swift
+//  UIPickerView.swift
 //  ReactiveCocoaExt
 //
 //  Copyright (c) 2018 Javier Zhang (https://wordlessj.github.io/)
@@ -25,34 +25,12 @@
 
 import ReactiveSwift
 
-class TextFieldForwarder: WeakForwarder<UITextFieldDelegate>, UITextFieldDelegate {
-    let (returned, returnedObserver) = VoidSignal.pipe()
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        returnedObserver.send()
-        return forwardee?.textFieldShouldReturn?(textField) ?? true
-    }
-}
-
-private var forwarderKey: UInt8 = 0
-
-extension UITextField {
-    var forwarder: TextFieldForwarder {
-        return objc_getAssociatedObject(self, &forwarderKey) as? TextFieldForwarder ?? {
-            let forwarder = TextFieldForwarder(forwardee: delegate)
-            delegate = forwarder
-            objc_setAssociatedObject(self, &forwarderKey, forwarder, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            return forwarder
-        }()
-    }
-}
-
-extension Reactive where Base: UITextField {
-    public var returnKeyType: BindingTarget<UIReturnKeyType> {
-        return makeBindingTarget { $0.returnKeyType = $1 }
-    }
-
-    public var returned: VoidSignal {
-        return base.forwarder.returned
+extension Reactive where Base: UIPickerView {
+    public var selected: NormalSignal<[Int]> {
+        return selections.map { [unowned base] _ in
+            (0..<base.numberOfComponents).map {
+                base.selectedRow(inComponent: $0)
+            }
+        }
     }
 }
