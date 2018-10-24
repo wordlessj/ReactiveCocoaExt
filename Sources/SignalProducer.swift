@@ -63,11 +63,21 @@ extension SignalProducer where Value: Sequence {
     public func mapElement<U>(_ transform: @escaping (Value.Element) -> U) -> SignalProducer<[U], Error> {
         return map { $0.map(transform) }
     }
+
+    public func flatMapElement<S: Sequence>(
+        _ transform: @escaping (Value.Element) -> S
+    ) -> SignalProducer<[S.Element], Error> {
+        return map { $0.flatMap(transform) }
+    }
 }
 
 extension SignalProducer where Value: OptionalProtocol {
     public func mapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U) -> SignalProducer<U?, Error> {
         return map { $0.optional.map(transform) }
+    }
+
+    public func flatMapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U?) -> SignalProducer<U?, Error> {
+        return map { $0.optional.flatMap(transform) }
     }
 }
 

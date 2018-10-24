@@ -63,11 +63,21 @@ extension Signal where Value: Sequence {
     public func mapElement<U>(_ transform: @escaping (Value.Element) -> U) -> Signal<[U], Error> {
         return map { $0.map(transform) }
     }
+
+    public func flatMapElement<S: Sequence>(
+        _ transform: @escaping (Value.Element) -> S
+    ) -> Signal<[S.Element], Error> {
+        return map { $0.flatMap(transform) }
+    }
 }
 
 extension Signal where Value: OptionalProtocol {
     public func mapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U) -> Signal<U?, Error> {
         return map { $0.optional.map(transform) }
+    }
+
+    public func flatMapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U?) -> Signal<U?, Error> {
+        return map { $0.optional.flatMap(transform) }
     }
 }
 
