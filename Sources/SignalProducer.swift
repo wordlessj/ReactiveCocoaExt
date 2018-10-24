@@ -79,6 +79,10 @@ extension SignalProducer where Value: OptionalProtocol {
     public func flatMapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U?) -> SignalProducer<U?, Error> {
         return map { $0.optional.flatMap(transform) }
     }
+
+    public func defaulted(_ value: Value.Wrapped) -> SignalProducer<Value.Wrapped, Error> {
+        return map { $0.optional ?? value }
+    }
 }
 
 extension SignalProducer where Value: OptionalProtocol, Value.Wrapped: Defaultable {

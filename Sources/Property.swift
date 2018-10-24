@@ -51,6 +51,10 @@ extension PropertyProtocol where Value: OptionalProtocol {
     public func flatMapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U?) -> Property<U?> {
         return map { $0.optional.flatMap(transform) }
     }
+
+    public func defaulted(_ value: Value.Wrapped) -> Property<Value.Wrapped> {
+        return map { $0.optional ?? value }
+    }
 }
 
 extension PropertyProtocol where Value: OptionalProtocol, Value.Wrapped: Defaultable {
