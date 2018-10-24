@@ -37,6 +37,12 @@ extension PropertyProtocol where Value: Sequence {
     }
 }
 
+extension PropertyProtocol where Value: OptionalProtocol {
+    public func mapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U) -> Property<U?> {
+        return map { $0.optional.map(transform) }
+    }
+}
+
 extension PropertyProtocol where Value: OptionalProtocol, Value.Wrapped: Defaultable {
     public func defaulted() -> Property<Value.Wrapped> {
         return map { $0.optional.defaulted() }

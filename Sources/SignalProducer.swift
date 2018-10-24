@@ -65,6 +65,12 @@ extension SignalProducer where Value: Sequence {
     }
 }
 
+extension SignalProducer where Value: OptionalProtocol {
+    public func mapWrapped<U>(_ transform: @escaping (Value.Wrapped) -> U) -> SignalProducer<U?, Error> {
+        return map { $0.optional.map(transform) }
+    }
+}
+
 extension SignalProducer where Value: OptionalProtocol, Value.Wrapped: Defaultable {
     public func defaulted() -> SignalProducer<Value.Wrapped, Error> {
         return map { $0.optional.defaulted() }
