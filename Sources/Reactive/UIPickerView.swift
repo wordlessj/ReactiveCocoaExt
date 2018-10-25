@@ -26,6 +26,14 @@
 import ReactiveSwift
 
 extension Reactive where Base: UIPickerView {
+    public var select: BindingTarget<[Int]> {
+        return makeBindingTarget { base, value in
+            for (component, row) in value.enumerated() {
+                base.selectRow(row, inComponent: component, animated: false)
+            }
+        }
+    }
+
     public var selected: NormalSignal<[Int]> {
         return selections.map { [unowned base] _ in
             (0..<base.numberOfComponents).map {
