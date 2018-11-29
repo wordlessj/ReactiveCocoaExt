@@ -40,3 +40,17 @@ extension BindingTargetProvider where Value == () {
             .startWithValues(provider.bindingTarget.action)
     }
 }
+
+extension BindingTarget {
+    public func reversedMap<U>(_ transform: @escaping (U) -> Value) -> BindingTarget<U> {
+        return BindingTarget<U>(lifetime: lifetime) { [action] value in
+            action(transform(value))
+        }
+    }
+}
+
+extension BindingTarget where Value == Bool {
+    public func negate() -> BindingTarget<Value> {
+        return reversedMap { !$0 }
+    }
+}
