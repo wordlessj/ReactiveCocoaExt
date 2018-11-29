@@ -30,6 +30,7 @@
 		C314FD20217D7BED00F1623D /* Forwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD1F217D7BED00F1623D /* Forwarder.swift */; };
 		C314FD22217D7DFF00F1623D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD21217D7DFF00F1623D /* UICollectionView.swift */; };
 		C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD23217DAE4900F1623D /* UIPickerView.swift */; };
+		C34C8B0721AFB51900696C32 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C8B0621AFB51900696C32 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		C314FD1F217D7BED00F1623D /* Forwarder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forwarder.swift; sourceTree = "<group>"; };
 		C314FD21217D7DFF00F1623D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		C314FD23217DAE4900F1623D /* UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
+		C34C8B0621AFB51900696C32 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 				C314FD23217DAE4900F1623D /* UIPickerView.swift */,
 				C314FD1D217D756500F1623D /* UITableView.swift */,
 				C314FD0A2178322C00F1623D /* UITextField.swift */,
+				C34C8B0621AFB51900696C32 /* UIView.swift */,
 				C314FD0C2178327300F1623D /* UIViewController.swift */,
 			);
 			path = Reactive;
@@ -266,6 +269,7 @@
 			files = (
 				C314FD0321782F8D00F1623D /* Bindable.swift in Sources */,
 				C314FCF821782BB700F1623D /* Property.swift in Sources */,
+				C34C8B0721AFB51900696C32 /* UIView.swift in Sources */,
 				C314FCFA21782C0900F1623D /* Binding.swift in Sources */,
 				C314FCF0217827AE00F1623D /* Signal.swift in Sources */,
 				C314FD162178731D00F1623D /* UIBarButtonItem.swift in Sources */,
