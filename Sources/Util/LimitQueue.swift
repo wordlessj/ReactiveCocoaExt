@@ -57,18 +57,44 @@ public class LimitQueue<Value> {
         runningCount += 1
 
         item.lifetime += item.producer.start { [observer = item.observer] event in
-            switch event {
-            case .completed, .failed, .interrupted:
+            if event.isTerminating {
                 self.runningCount -= 1
 
                 if !self.pendingItems.isEmpty {
                     let item = self.pendingItems.removeFirst()
                     self.run(item)
                 }
-            case .value: break
             }
 
             observer.send(event)
+        }
+    }
+}
+
+public class KeyLimitQueue<Key: Hashable, Value> {
+    private let limitQueue: LimitQueue<Value>
+    private var queuedKeys = [Key: [NormalSignal<Value>.Observer]]()
+
+    public init(_ limit: Int = 1) {
+        limitQueue = LimitQueue(limit)
+    }
+
+    public func add(_ producer: NormalSignalProducer<Value>, key: Key) -> NormalSignalProducer<Value> {
+        return SignalProducer { observer, lifetime in
+            if self.queuedKeys[key] != nil {
+                self.queuedKeys[key]!.append(observer)
+            } else {
+                self.queuedKeys[key] = []
+
+                lifetime += self.limitQueue.add(producer).start { event in
+                    observer.send(event)
+                    self.queuedKeys[key]?.forEach { $0.send(event) }
+
+                    if event.isTerminating {
+                        self.queuedKeys[key] = nil
+                    }
+                }
+            }
         }
     }
 }
