@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BCBD0408FD5AF9300441CF64 /* Pods_ReactiveCocoaExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */; };
+		C306C60021B79FC4008B5BED /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306C5FF21B79FC4008B5BED /* UIStackView.swift */; };
 		C314FCE82178251E00F1623D /* ReactiveCocoaExt.h in Headers */ = {isa = PBXBuildFile; fileRef = C314FCE62178251E00F1623D /* ReactiveCocoaExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C314FCF0217827AE00F1623D /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FCEF217827AD00F1623D /* Signal.swift */; };
 		C314FCF2217829CF00F1623D /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FCF1217829CF00F1623D /* Optional.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		2801029472A6311327638C08 /* Pods-ReactiveCocoaExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaExt/Pods-ReactiveCocoaExt.release.xcconfig"; sourceTree = "<group>"; };
 		9502E68812BE696D7B1304D8 /* Pods-ReactiveCocoaExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaExt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaExt/Pods-ReactiveCocoaExt.debug.xcconfig"; sourceTree = "<group>"; };
+		C306C5FF21B79FC4008B5BED /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		C314FCE32178251E00F1623D /* ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C314FCE62178251E00F1623D /* ReactiveCocoaExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveCocoaExt.h; sourceTree = "<group>"; };
 		C314FCE72178251E00F1623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				C314FD08217831A700F1623D /* UIControl.swift */,
 				C314FD06217830F200F1623D /* UIKeyboard.swift */,
 				C314FD23217DAE4900F1623D /* UIPickerView.swift */,
+				C306C5FF21B79FC4008B5BED /* UIStackView.swift */,
 				C314FD1D217D756500F1623D /* UITableView.swift */,
 				C314FD0A2178322C00F1623D /* UITextField.swift */,
 				C34C8B0621AFB51900696C32 /* UIView.swift */,
@@ -286,6 +289,7 @@
 				C314FD0121782EE700F1623D /* URLSession.swift in Sources */,
 				C314FCF2217829CF00F1623D /* Optional.swift in Sources */,
 				C314FCFC21782CAC00F1623D /* Reactive.swift in Sources */,
+				C306C60021B79FC4008B5BED /* UIStackView.swift in Sources */,
 				C314FCF421782AA200F1623D /* SignalProducer.swift in Sources */,
 				C314FD0D2178327300F1623D /* UIViewController.swift in Sources */,
 				C314FD102178341000F1623D /* LimitQueue.swift in Sources */,
