@@ -32,6 +32,7 @@
 		C314FD22217D7DFF00F1623D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD21217D7DFF00F1623D /* UICollectionView.swift */; };
 		C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD23217DAE4900F1623D /* UIPickerView.swift */; };
 		C34C8B0721AFB51900696C32 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C8B0621AFB51900696C32 /* UIView.swift */; };
+		C3DCC44E21C386B100A15B73 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCC44D21C386B100A15B73 /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		C314FD21217D7DFF00F1623D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		C314FD23217DAE4900F1623D /* UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
 		C34C8B0621AFB51900696C32 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C3DCC44D21C386B100A15B73 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,6 +151,7 @@
 				C314FD21217D7DFF00F1623D /* UICollectionView.swift */,
 				C314FD08217831A700F1623D /* UIControl.swift */,
 				C314FD06217830F200F1623D /* UIKeyboard.swift */,
+				C3DCC44D21C386B100A15B73 /* UILabel.swift */,
 				C314FD23217DAE4900F1623D /* UIPickerView.swift */,
 				C306C5FF21B79FC4008B5BED /* UIStackView.swift */,
 				C314FD1D217D756500F1623D /* UITableView.swift */,
@@ -292,6 +295,7 @@
 				C306C60021B79FC4008B5BED /* UIStackView.swift in Sources */,
 				C314FCF421782AA200F1623D /* SignalProducer.swift in Sources */,
 				C314FD0D2178327300F1623D /* UIViewController.swift in Sources */,
+				C3DCC44E21C386B100A15B73 /* UILabel.swift in Sources */,
 				C314FD102178341000F1623D /* LimitQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
