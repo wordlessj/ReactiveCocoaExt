@@ -64,6 +64,10 @@ extension Signal where Value: Sequence {
         return map { $0.map(transform) }
     }
 
+    public func compactMapElement<U>(_ transform: @escaping (Value.Element) -> U?) -> Signal<[U], Error> {
+        return map { $0.compactMap(transform) }
+    }
+
     public func flatMapElement<S: Sequence>(
         _ transform: @escaping (Value.Element) -> S
     ) -> Signal<[S.Element], Error> {

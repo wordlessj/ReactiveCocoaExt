@@ -26,7 +26,7 @@
 import ReactiveSwift
 import ReactiveCocoa
 
-public protocol Bindable: class, ReactiveExtensionsProvider {}
+public protocol Bindable: AnyObject, ReactiveExtensionsProvider {}
 
 extension Bindable {
     @discardableResult
