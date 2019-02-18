@@ -33,6 +33,7 @@
 		C314FD22217D7DFF00F1623D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD21217D7DFF00F1623D /* UICollectionView.swift */; };
 		C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314FD23217DAE4900F1623D /* UIPickerView.swift */; };
 		C34C8B0721AFB51900696C32 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34C8B0621AFB51900696C32 /* UIView.swift */; };
+		C382CFAC221A4C73006522F8 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C382CFAB221A4C73006522F8 /* CALayer.swift */; };
 		C3DCC44E21C386B100A15B73 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCC44D21C386B100A15B73 /* UILabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		C314FD21217D7DFF00F1623D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		C314FD23217DAE4900F1623D /* UIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerView.swift; sourceTree = "<group>"; };
 		C34C8B0621AFB51900696C32 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C382CFAB221A4C73006522F8 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		C3DCC44D21C386B100A15B73 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 				C314FD042178305700F1623D /* Object.swift */,
 				C314FD0021782EE700F1623D /* URLSession.swift */,
 				C30706EB21E5868C004B8242 /* NSLayoutConstraint.swift */,
+				C382CFAB221A4C73006522F8 /* CALayer.swift */,
 				C314FD152178731D00F1623D /* UIBarButtonItem.swift */,
 				C314FD21217D7DFF00F1623D /* UICollectionView.swift */,
 				C314FD08217831A700F1623D /* UIControl.swift */,
@@ -285,6 +288,7 @@
 				C314FD1E217D756500F1623D /* UITableView.swift in Sources */,
 				C314FD24217DAE4900F1623D /* UIPickerView.swift in Sources */,
 				C314FD09217831A700F1623D /* UIControl.swift in Sources */,
+				C382CFAC221A4C73006522F8 /* CALayer.swift in Sources */,
 				C30706EC21E5868C004B8242 /* NSLayoutConstraint.swift in Sources */,
 				C314FCF621782B2500F1623D /* DispatchTimeInterval.swift in Sources */,
 				C314FCFF21782D5C00F1623D /* Notification.swift in Sources */,
