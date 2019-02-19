@@ -32,6 +32,10 @@ extension PropertyProtocol {
 }
 
 extension PropertyProtocol where Value: Sequence {
+    public func filterElement(_ isIncluded: @escaping (Value.Element) -> Bool) -> Property<[Value.Element]> {
+        return map { $0.filter(isIncluded) }
+    }
+
     public func mapElement<U>(_ transform: @escaping (Value.Element) -> U) -> Property<[U]> {
         return map { $0.map(transform) }
     }

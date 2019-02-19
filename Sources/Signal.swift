@@ -60,6 +60,10 @@ extension Signal {
 }
 
 extension Signal where Value: Sequence {
+    public func filterElement(_ isIncluded: @escaping (Value.Element) -> Bool) -> Signal<[Value.Element], Error> {
+        return map { $0.filter(isIncluded) }
+    }
+
     public func mapElement<U>(_ transform: @escaping (Value.Element) -> U) -> Signal<[U], Error> {
         return map { $0.map(transform) }
     }
