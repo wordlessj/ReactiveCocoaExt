@@ -34,6 +34,10 @@ extension SignalProducer {
         return map(value: ())
     }
 
+    public func enumerated() -> SignalProducer<(index: Int, value: Value), Error> {
+        return map(enumeratedTransform())
+    }
+
     public func observeOnUI() -> SignalProducer {
         return observe(on: UIScheduler())
     }

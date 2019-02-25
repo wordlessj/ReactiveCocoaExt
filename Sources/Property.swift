@@ -29,6 +29,10 @@ extension PropertyProtocol {
     public func void() -> Property<()> {
         return map(value: ())
     }
+
+    public func enumerated() -> Property<(index: Int, value: Value)> {
+        return map(enumeratedTransform())
+    }
 }
 
 extension PropertyProtocol where Value: Sequence {

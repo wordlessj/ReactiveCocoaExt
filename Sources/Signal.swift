@@ -29,9 +29,22 @@ import Result
 public typealias NormalSignal<Value> = Signal<Value, NoError>
 public typealias VoidSignal = NormalSignal<()>
 
+func enumeratedTransform<Value>() -> (Value) -> (index: Int, value: Value) {
+    var index = -1
+
+    return { value in
+        index += 1
+        return (index, value)
+    }
+}
+
 extension Signal {
     public func void() -> Signal<(), Error> {
         return map(value: ())
+    }
+
+    public func enumerated() -> Signal<(index: Int, value: Value), Error> {
+        return map(enumeratedTransform())
     }
 
     public func observeOnUI() -> Signal {
