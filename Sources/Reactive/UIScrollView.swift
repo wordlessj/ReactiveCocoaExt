@@ -30,6 +30,7 @@ class ScrollViewForwarder: WeakForwarder<UIScrollViewDelegate>, UIScrollViewDele
     let (draggingBegan, draggingBeganObserver) = VoidSignal.pipe()
     let (draggingEnded, draggingEndedObserver) = NormalSignal<Bool>.pipe()
     let (deceleratingEnded, deceleratingEndedObserver) = VoidSignal.pipe()
+    let (scrollingAnimationEnded, scrollingAnimationEndedObserver) = VoidSignal.pipe()
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         forwardee?.scrollViewDidScroll?(scrollView)
@@ -49,6 +50,11 @@ class ScrollViewForwarder: WeakForwarder<UIScrollViewDelegate>, UIScrollViewDele
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         forwardee?.scrollViewDidEndDecelerating?(scrollView)
         deceleratingEndedObserver.send()
+    }
+
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        forwardee?.scrollViewDidEndScrollingAnimation?(scrollView)
+        scrollingAnimationEndedObserver.send()
     }
 }
 
@@ -87,5 +93,9 @@ extension Reactive where Base: UIScrollView {
             draggingEnded.filter { !$0 }.void(),
             deceleratingEnded
         )
+    }
+
+    public var scrollingAnimationEnded: VoidSignal {
+        return base.scrollForwarder.scrollingAnimationEnded
     }
 }
