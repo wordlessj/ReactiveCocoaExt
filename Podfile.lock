@@ -1,9 +1,9 @@
 PODS:
-  - ReactiveCocoa (8.0.2):
-    - ReactiveSwift (~> 4.0)
-  - ReactiveSwift (4.0.0):
-    - Result (~> 4.0)
-  - Result (4.0.0)
+  - ReactiveCocoa (9.0.0):
+    - ReactiveSwift (~> 5.0)
+  - ReactiveSwift (5.0.1):
+    - Result (~> 4.1)
+  - Result (4.1.0)
 
 DEPENDENCIES:
   - ReactiveCocoa
@@ -15,10 +15,10 @@ SPEC REPOS:
     - Result
 
 SPEC CHECKSUMS:
-  ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
-  ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  ReactiveCocoa: 29709cf0cc7502ddd04a51220e10ee0336d8bec8
+  ReactiveSwift: cac20a5bbe560c5806bd29c0fccf90d03b996ac1
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
 PODFILE CHECKSUM: b19ecf6a19dc08caf73f3b83efc6dda417543f39
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

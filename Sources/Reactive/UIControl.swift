@@ -26,7 +26,7 @@
 import ReactiveSwift
 
 extension Reactive where Base: UIControl {
-    public var tapped: NormalSignal<Base> {
-        return controlEvents(.touchUpInside)
+    public var tapped: VoidSignal {
+        return mapControlEvents(.touchUpInside) { _ in }
     }
 }
