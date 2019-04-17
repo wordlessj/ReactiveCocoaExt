@@ -26,6 +26,10 @@
 import ReactiveSwift
 
 extension Reactive where Base: UIView {
+    public var transform: BindingTarget<CGAffineTransform> {
+        return makeBindingTarget { $0.transform = $1 }
+    }
+
     public var layoutMargins: BindingTarget<UIEdgeInsets> {
         return makeBindingTarget { $0.layoutMargins = $1 }
     }
