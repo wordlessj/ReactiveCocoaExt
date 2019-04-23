@@ -53,6 +53,10 @@ extension Dictionary: Defaultable {
     public static var defaultValue: [Key: Value] { return [:] }
 }
 
+extension CGFloat: Defaultable {
+    public static var defaultValue: CGFloat = 0
+}
+
 extension Optional where Wrapped: Defaultable {
     public func defaulted() -> Wrapped {
         switch self {
