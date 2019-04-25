@@ -28,7 +28,8 @@ import ReactiveSwift
 extension Reactive where Base: UIPickerView {
     public var select: BindingTarget<[Int]> {
         return makeBindingTarget { base, value in
-            for (component, row) in value.enumerated() {
+            for (component, row) in value.prefix(base.numberOfComponents).enumerated() {
+                guard row < base.numberOfRows(inComponent: component) else { continue }
                 base.selectRow(row, inComponent: component, animated: false)
             }
         }
