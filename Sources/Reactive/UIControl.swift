@@ -26,6 +26,16 @@
 import ReactiveSwift
 
 extension Reactive where Base: UIControl {
+    public var state: NormalSignalProducer<UIControl.State> {
+        return SignalProducer
+            .combineLatest(
+                producer(\.isEnabled),
+                producer(\.isSelected),
+                producer(\.isHighlighted)
+            )
+            .map { [unowned base] _ in base.state }
+    }
+
     public var tapped: VoidSignal {
         return mapControlEvents(.touchUpInside) { _ in }
     }
