@@ -55,12 +55,27 @@ extension Reactive where Base: AnyObject {
 
 extension Reactive where Base: NSObject {
     public func producer<Value>(_ keyPath: KeyPath<Base, Value>) -> NormalSignalProducer<Value> {
-        return SignalProducer { [base] observer, lifetime in
-            let token = base.observe(keyPath) { base, _ in
-                observer.send(value: base[keyPath: keyPath])
-            }
-
-            lifetime.observeEnded { token.invalidate() }
+        return SignalProducer { observer, lifetime in
+            self.observe(keyPath, options: .initial, observer: observer, lifetime: lifetime)
         }
+    }
+
+    public func signal<Value>(_ keyPath: KeyPath<Base, Value>) -> NormalSignal<Value> {
+        return Signal { observer, lifetime in
+            self.observe(keyPath, options: [], observer: observer, lifetime: lifetime)
+        }
+    }
+
+    private func observe<Value>(
+        _ keyPath: KeyPath<Base, Value>,
+        options: NSKeyValueObservingOptions,
+        observer: NormalSignal<Value>.Observer,
+        lifetime: Lifetime
+    ) {
+        let token = base.observe(keyPath, options: options) { base, _ in
+            observer.send(value: base[keyPath: keyPath])
+        }
+
+        lifetime.observeEnded { token.invalidate() }
     }
 }
