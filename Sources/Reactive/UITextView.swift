@@ -1,8 +1,8 @@
 //
-//  UITextField.swift
+//  UITextView.swift
 //  ReactiveCocoaExt
 //
-//  Copyright (c) 2018 Javier Zhang (https://wordlessj.github.io/)
+//  Copyright (c) 2019 Javier Zhang (https://wordlessj.github.io/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,41 +25,11 @@
 
 import ReactiveSwift
 
-class TextFieldForwarder: WeakForwarder<UITextFieldDelegate>, UITextFieldDelegate {
-    let (returned, returnedObserver) = VoidSignal.pipe()
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        returnedObserver.send()
-        return forwardee?.textFieldShouldReturn?(textField) ?? true
-    }
-}
-
-private var forwarderKey: UInt8 = 0
-
-extension UITextField {
-    var forwarder: TextFieldForwarder {
-        return objc_getAssociatedObject(self, &forwarderKey) as? TextFieldForwarder ?? {
-            let forwarder = TextFieldForwarder(forwardee: delegate)
-            delegate = forwarder
-            objc_setAssociatedObject(self, &forwarderKey, forwarder, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            return forwarder
-        }()
-    }
-}
-
-extension Reactive where Base: UITextField {
-    public var returnKeyType: BindingTarget<UIReturnKeyType> {
-        return makeBindingTarget { $0.returnKeyType = $1 }
-    }
-
+extension Reactive where Base: UITextView {
     public var textIfNeeded: BindingTarget<String?> {
         return makeBindingTarget { base, value in
             guard base.text != value else { return }
             base.text = value
         }
-    }
-
-    public var returned: VoidSignal {
-        return base.forwarder.returned
     }
 }
