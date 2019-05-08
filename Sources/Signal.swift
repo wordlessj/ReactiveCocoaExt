@@ -59,6 +59,11 @@ extension Signal {
         return flatMapError(.empty)
     }
 
+    public func filter<Samplee: SignalProducerConvertible>(while samplee: Samplee) -> Signal
+        where Samplee.Value == Bool, Samplee.Error == NoError {
+            return withLatest(from: samplee).filterMap { $1 ? $0 : nil }
+    }
+
     public func onValue(_ action: @escaping (Value) -> ()) -> Signal {
         return on(value: action)
     }

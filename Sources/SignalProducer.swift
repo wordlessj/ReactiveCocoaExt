@@ -50,6 +50,11 @@ extension SignalProducer {
         return flatMapError(.empty)
     }
 
+    public func filter<Samplee: SignalProducerConvertible>(while samplee: Samplee) -> SignalProducer
+        where Samplee.Value == Bool, Samplee.Error == NoError {
+            return withLatest(from: samplee).filterMap { $1 ? $0 : nil }
+    }
+
     public func onValue(_ action: @escaping (Value) -> ()) -> SignalProducer {
         return on(value: action)
     }
