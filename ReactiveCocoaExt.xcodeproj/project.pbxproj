@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BCBD0408FD5AF9300441CF64 /* Pods_ReactiveCocoaExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DCE3656BCB7828C099BF8D /* Pods_ReactiveCocoaExt.framework */; };
+		C304F56D228938290039F187 /* UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C304F56C228938290039F187 /* UIGestureRecognizer.swift */; };
 		C306C60021B79FC4008B5BED /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C306C5FF21B79FC4008B5BED /* UIStackView.swift */; };
 		C30706EC21E5868C004B8242 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30706EB21E5868C004B8242 /* NSLayoutConstraint.swift */; };
 		C314FCE82178251E00F1623D /* ReactiveCocoaExt.h in Headers */ = {isa = PBXBuildFile; fileRef = C314FCE62178251E00F1623D /* ReactiveCocoaExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		2801029472A6311327638C08 /* Pods-ReactiveCocoaExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaExt/Pods-ReactiveCocoaExt.release.xcconfig"; sourceTree = "<group>"; };
 		9502E68812BE696D7B1304D8 /* Pods-ReactiveCocoaExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoaExt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoaExt/Pods-ReactiveCocoaExt.debug.xcconfig"; sourceTree = "<group>"; };
+		C304F56C228938290039F187 /* UIGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizer.swift; sourceTree = "<group>"; };
 		C306C5FF21B79FC4008B5BED /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		C30706EB21E5868C004B8242 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		C314FCE32178251E00F1623D /* ReactiveCocoaExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveCocoaExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 				C314FD152178731D00F1623D /* UIBarButtonItem.swift */,
 				C314FD21217D7DFF00F1623D /* UICollectionView.swift */,
 				C314FD08217831A700F1623D /* UIControl.swift */,
+				C304F56C228938290039F187 /* UIGestureRecognizer.swift */,
 				C314FD06217830F200F1623D /* UIKeyboard.swift */,
 				C3DCC44D21C386B100A15B73 /* UILabel.swift */,
 				C314FD23217DAE4900F1623D /* UIPickerView.swift */,
@@ -302,6 +305,7 @@
 				C314FD22217D7DFF00F1623D /* UICollectionView.swift in Sources */,
 				C314FD07217830F200F1623D /* UIKeyboard.swift in Sources */,
 				C314FD052178305700F1623D /* Object.swift in Sources */,
+				C304F56D228938290039F187 /* UIGestureRecognizer.swift in Sources */,
 				C314FD0B2178322C00F1623D /* UITextField.swift in Sources */,
 				C314FD0121782EE700F1623D /* URLSession.swift in Sources */,
 				C314FCF2217829CF00F1623D /* Optional.swift in Sources */,
