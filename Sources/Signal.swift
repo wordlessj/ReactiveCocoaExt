@@ -24,9 +24,8 @@
 //
 
 import ReactiveSwift
-import Result
 
-public typealias NormalSignal<Value> = Signal<Value, NoError>
+public typealias NormalSignal<Value> = Signal<Value, Never>
 public typealias VoidSignal = NormalSignal<()>
 
 func enumeratedTransform<Value>() -> (Value) -> (index: Int, value: Value) {
@@ -60,7 +59,7 @@ extension Signal {
     }
 
     public func filter<Samplee: SignalProducerConvertible>(while samplee: Samplee) -> Signal
-        where Samplee.Value == Bool, Samplee.Error == NoError {
+        where Samplee.Value == Bool, Samplee.Error == Never {
             return withLatest(from: samplee).filterMap { $1 ? $0 : nil }
     }
 

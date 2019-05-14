@@ -24,9 +24,8 @@
 //
 
 import ReactiveSwift
-import Result
 
-public typealias NormalSignalProducer<Value> = SignalProducer<Value, NoError>
+public typealias NormalSignalProducer<Value> = SignalProducer<Value, Never>
 public typealias VoidSignalProducer = NormalSignalProducer<()>
 
 extension SignalProducer {
@@ -51,7 +50,7 @@ extension SignalProducer {
     }
 
     public func filter<Samplee: SignalProducerConvertible>(while samplee: Samplee) -> SignalProducer
-        where Samplee.Value == Bool, Samplee.Error == NoError {
+        where Samplee.Value == Bool, Samplee.Error == Never {
             return withLatest(from: samplee).filterMap { $1 ? $0 : nil }
     }
 
@@ -110,7 +109,7 @@ extension SignalProducer where Value: OptionalProtocol, Value.Wrapped: Defaultab
     }
 }
 
-extension SignalProducer where Value == Date, Error == NoError {
+extension SignalProducer where Value == Date, Error == Never {
     public static func timer(
         interval: Double,
         on scheduler: DateScheduler = QueueScheduler.main

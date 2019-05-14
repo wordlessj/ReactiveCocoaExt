@@ -24,13 +24,12 @@
 //
 
 import ReactiveSwift
-import Result
 
 extension Reactive where Base: URLSession {
     public func upload(
         with request: URLRequest,
         from bodyData: Data?
-    ) -> SignalProducer<(Data, URLResponse), AnyError> {
+    ) -> SignalProducer<(Data, URLResponse), Error> {
         return SignalProducer { [base] observer, lifetime in
             let task = base.uploadTask(with: request, from: bodyData) { data, response, error in
                 if let data = data, let response = response {
@@ -38,7 +37,7 @@ extension Reactive where Base: URLSession {
                     observer.sendCompleted()
                 } else {
                     let defaultError = NSError(domain: "URLSession.uploadTask", code: 1, userInfo: nil)
-                    observer.send(error: AnyError(error ?? defaultError))
+                    observer.send(error: error ?? defaultError)
                 }
             }
 

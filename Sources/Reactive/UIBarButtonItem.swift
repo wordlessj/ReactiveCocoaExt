@@ -25,7 +25,6 @@
 
 import ReactiveSwift
 import ReactiveCocoa
-import Result
 
 private var tappedSignalKey: UInt8 = 0
 
@@ -39,7 +38,7 @@ extension UIBarButtonItem {
 extension Reactive where Base: UIBarButtonItem {
     public var tapped: NormalSignal<UIBarButtonItem> {
         return base.tappedSignal ?? {
-            let action = Action<UIBarButtonItem, UIBarButtonItem, NoError> { SignalProducer(value: $0) }
+            let action = Action<UIBarButtonItem, UIBarButtonItem, Never> { SignalProducer(value: $0) }
             pressed = CocoaAction(action) { $0 }
             base.tappedSignal = action.values
             return action.values
