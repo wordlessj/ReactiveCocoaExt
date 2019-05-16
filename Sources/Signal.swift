@@ -46,6 +46,12 @@ extension Signal {
         return map(enumeratedTransform())
     }
 
+    public func map<Samplee: SignalProducerConvertible>(
+        latest samplee: Samplee
+    ) -> Signal<Samplee.Value, Error> where Samplee.Error == Never {
+        return withLatest(from: samplee).map { $1 }
+    }
+
     public func observeOnUI() -> Signal {
         return observe(on: UIScheduler())
     }
