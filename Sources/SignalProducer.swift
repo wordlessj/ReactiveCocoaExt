@@ -73,6 +73,22 @@ extension SignalProducer {
     }
 }
 
+extension SignalProducer {
+    public func with<A: AnyObject>(_ a: A) -> SignalProducer<(Value, A), Error> {
+        return lift { $0.with(a) }
+    }
+
+    public func with<A: AnyObject, B: AnyObject>(_ a: A, _ b: B) -> SignalProducer<(Value, A, B), Error> {
+        return lift { $0.with(a, b) }
+    }
+
+    public func with<A: AnyObject, B: AnyObject, C: AnyObject>(
+        _ a: A, _ b: B, _ c: C
+    ) -> SignalProducer<(Value, A, B, C), Error> {
+        return lift { $0.with(a, b, c) }
+    }
+}
+
 extension SignalProducer where Value: Sequence {
     public func filterElement(
         _ isIncluded: @escaping (Value.Element) -> Bool

@@ -82,6 +82,28 @@ extension Signal {
     }
 }
 
+extension Signal {
+    public func with<A: AnyObject>(_ a: A) -> Signal<(Value, A), Error> {
+        return take(duringLifetimeOf: a)
+            .map { [unowned a] value in (value, a) }
+    }
+
+    public func with<A: AnyObject, B: AnyObject>(_ a: A, _ b: B) -> Signal<(Value, A, B), Error> {
+        return take(duringLifetimeOf: a)
+            .take(duringLifetimeOf: b)
+            .map { [unowned a, unowned b] value in (value, a, b) }
+    }
+
+    public func with<A: AnyObject, B: AnyObject, C: AnyObject>(
+        _ a: A, _ b: B, _ c: C
+    ) -> Signal<(Value, A, B, C), Error> {
+        return take(duringLifetimeOf: a)
+            .take(duringLifetimeOf: b)
+            .take(duringLifetimeOf: c)
+            .map { [unowned a, unowned b, unowned c] value in (value, a, b, c) }
+    }
+}
+
 extension Signal where Value: Sequence {
     public func filterElement(_ isIncluded: @escaping (Value.Element) -> Bool) -> Signal<[Value.Element], Error> {
         return map { $0.filter(isIncluded) }
