@@ -33,34 +33,10 @@ extension PropertyProtocol {
     public func enumerated() -> Property<(index: Int, value: Value)> {
         return map(enumeratedTransform())
     }
-}
 
-extension PropertyProtocol {
-    public func with<A: AnyObject, T>(
-        _ a: A, transform: @escaping (Value, A) -> T
-    ) -> Property<T> {
-        return Property(
-            initial: transform(value, a),
-            then: signal.with(a).map(transform)
-        )
-    }
-
-    public func with<A: AnyObject, B: AnyObject, T>(
-        _ a: A, _ b: B, transform: @escaping (Value, A, B) -> T
-    ) -> Property<T> {
-        return Property(
-            initial: transform(value, a, b),
-            then: signal.with(a, b).map(transform)
-        )
-    }
-
-    public func with<A: AnyObject, B: AnyObject, C: AnyObject, T>(
-        _ a: A, _ b: B, _ c: C, transform: @escaping (Value, A, B, C) -> T
-    ) -> Property<T> {
-        return Property(
-            initial: transform(value, a, b, c),
-            then: signal.with(a, b, c).map(transform)
-        )
+    @discardableResult
+    public func bind(_ action: @escaping (Value) -> Void) -> Disposable {
+        return producer.bind(action)
     }
 }
 

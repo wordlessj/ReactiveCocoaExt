@@ -104,6 +104,13 @@ extension Signal {
     }
 }
 
+extension Signal where Error == Never {
+    @discardableResult
+    public func bind(_ action: @escaping (Value) -> Void) -> Disposable? {
+        return observeValues(action)
+    }
+}
+
 extension Signal where Value: Sequence {
     public func filterElement(_ isIncluded: @escaping (Value.Element) -> Bool) -> Signal<[Value.Element], Error> {
         return map { $0.filter(isIncluded) }

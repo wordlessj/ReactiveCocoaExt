@@ -89,6 +89,13 @@ extension SignalProducer {
     }
 }
 
+extension SignalProducer where Error == Never {
+    @discardableResult
+    public func bind(_ action: @escaping (Value) -> Void) -> Disposable {
+        return startWithValues(action)
+    }
+}
+
 extension SignalProducer where Value: Sequence {
     public func filterElement(
         _ isIncluded: @escaping (Value.Element) -> Bool
