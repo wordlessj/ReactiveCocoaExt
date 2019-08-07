@@ -79,3 +79,12 @@ extension PropertyProtocol where Value: OptionalProtocol, Value.Wrapped: Default
         return map { $0.optional.defaulted() }
     }
 }
+
+extension Property where Value == Date {
+    public static func timer(
+        interval: Double,
+        on scheduler: DateScheduler = QueueScheduler.main
+    ) -> Property<Value> {
+        return Property(initial: Date(), then: .timer(interval: interval, on: scheduler))
+    }
+}
